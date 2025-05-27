@@ -1,13 +1,11 @@
 import { TypeAgendamento } from "@/utils/TypeAgendamento";
 
-export default async function CardStatusAgenda(agendamentos: TypeAgendamento) {
+export default async function CardStatusAgenda({ agendamentos }: { agendamentos: TypeAgendamento[] }) {
 
-    // console.log(agendamentos)
-
-    // const agendado = agendamentos.filter((agendamento : TypeAgendamento) => agendamento.acf.status_agendamento == 'agendado');
-    // const orcamento = agendamentos.filter((agendamento : TypeAgendamento) => agendamento.acf.status_agendamento == 'orcamento');
-    // const atendido = agendamentos.filter((agendamento : TypeAgendamento) => agendamento.acf.status_agendamento == 'atendido');
-    // const cancelado = agendamentos.filter((agendamento : TypeAgendamento) => agendamento.acf.status_agendamento == 'cancelado');
+    const agendado = agendamentos.filter((agendamento : TypeAgendamento) => agendamento.acf.status_agendamento == 'agendado');
+    const orcamento = agendamentos.filter((agendamento : TypeAgendamento) => agendamento.acf.status_agendamento == 'orcamento');
+    const atendido = agendamentos.filter((agendamento : TypeAgendamento) => agendamento.acf.status_agendamento == 'atendido');
+    const cancelado = agendamentos.filter((agendamento : TypeAgendamento) => agendamento.acf.status_agendamento == 'cancelado');
 
     return(
        <>
