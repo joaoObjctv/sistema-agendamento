@@ -1,0 +1,11 @@
+# Ignorar node_modules
+node_modules/
+
+# Ignorar arquivos .env
+.env
+
+# Ignorar pastas específicas
+/dist
+/build
+
+.next/
