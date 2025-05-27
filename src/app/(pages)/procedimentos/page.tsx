@@ -4,19 +4,18 @@ import { getPaciente, getProcedimento } from "@/app/data/fetcher";
 
 export default async function Procedimentos() {
     const pacientes = await getPaciente('');
-    
     const procedimentos = await getProcedimento('');
 
     return(
         <div className="flex flex-col items-start mx-auto p-8 pt-0 w-full">
             <h2 className="mb-4 font-bold uppercase text-lg">Procedimentos</h2>
-            <div className="grid grid-cols-2 gap-4 w-full">
+            <div className="grid grid-cols-1 gap-4 w-full">
                 {procedimentos.map((procedimento : TypeProcedimento) =>(
                     <div key={procedimento.id} className="bg-white flex flex-col p-4 items-start rounded shadow-sm w-full relative cardProcedimento">
                         <h3 className="font-base text-base mb-4 text-slate-200 uppercase relative z-10">{procedimento.title.rendered}</h3>
                         <p className="pb-4 border-b border-[#ddd] mb-4 text-gray-700">{procedimento.acf.descricao_procedimento}</p>
 
-                        <div className="grid grid-cols-2 gap-4 pb-4 mb-4 border-b border-[#ddd]">
+                        <div className="grid grid-cols-4 gap-4 pb-4 mb-4 border-b border-[#ddd] w-full">
                             <div className="flex flex-col">
                                 <div className="flex items-center">
                                     <FaRegCalendarAlt color="#333" />
@@ -52,7 +51,7 @@ export default async function Procedimentos() {
                         
                         <div className="flex flex-col">
                             <h4 className="font-bold">Produtos utilizados no procedimento</h4>
-                            <ul className="grid grid-cols-2 gap-2">
+                            <ul className="grid grid-cols-4 gap-2">
                                 {procedimento.acf.produtos_utilizados.map((produto, index) =>(
                                     <li key={index+1}>{produto.nome_produto}</li>
                                 ))}

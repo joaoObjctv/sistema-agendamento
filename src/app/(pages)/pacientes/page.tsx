@@ -1,7 +1,9 @@
+import { getPaciente } from "@/app/data/fetcher";
 import { TypePaciente } from "@/utils/TypePaciente";
 
 export default async function Pacientes() {
-
+    const pacientes = await getPaciente('');
+    
     return (
         <div className="flex flex-col items-start mx-auto px-8 py-0 w-full">
             <h2 className="mb-4 font-bold uppercase text-lg">Agendamentos</h2>
