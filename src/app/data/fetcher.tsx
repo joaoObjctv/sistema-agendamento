@@ -28,7 +28,6 @@ export async function getProcedimento(id : string | number[]) {
 
 export async function getPaciente(id: string | number[]) {
     const idPaciente = id ? id : '';
-    const credentials = btoa(`${process.env.BASIC_AUTH_USER}:${process.env.BASIC_AUTH_PASSWORD}`); // Codifica em Base6
     const pacientes = await fetch(`${process.env.NEXT_PUBLIC_WP_SITE_URL}/wp-json/wp/v2/paciente/${idPaciente}`,  {
         headers: {
         'Authorization': `Basic ${credentials}`

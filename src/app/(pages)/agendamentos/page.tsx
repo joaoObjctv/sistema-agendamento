@@ -29,6 +29,8 @@ export default async function Agendamentos() {
                         <option key={paciente.id} value={paciente.id}>{paciente.title.rendered}</option>
                     ))}
                 </select>
+
+                <button type="button">Adicionar novo paciente</button>
                 
                 <h3 className="font-bold text-lg mb-4">Selecione o(s) procedimento(s) do atendimento</h3>
 
